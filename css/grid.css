@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+}
+
+/* css grid - to'rga(setkaga) asoslangan layout bo'lib, float yoki position xossalari yordamisiz qator va ustunlar yordamida veb sahifada layout yartishda yordam beradi. Boshqacha qilib aytganda, veb sahifadagi elementlarni joylashtirish uvhun xizmat qiladi. CSS Grid 2 asosiy elementlardan tashkil topgan: grid container va grid item */
+
+/* grid-container - display xossasi uchun grid yoki inline-grid qiymatiga ega bo'lgan elementga aytiladi */
+
+/* grid-items deb grid-container(ota-onaga) ega bo'lgan elementlarga aytiladi */
+
+/* Grid-Containerni asosiy 2 hossalari*/
+/* 1- grid-template-columns: npx,rem,fr(yoki)auto  n(2)px,rem,fr(yoki)auto n(3)px,rem,fr(yoki)auto n(n)px,rem,fr(yoki)auto......; bu container ichidagi ustunlar soni va uzunligini belgilaydi*/
+/* grid-template-rows: ; container ichidagi qatorlar balandligini belgilashda ishlatiladi*/
+/* grid-template-columns: repeat(); grid-template-rows: repeat(); Agarda beriladiga qiymatlarning barchasi bir xil bo'lsa repeat(nta, nfr yoki px % ...vhk)->bo'lishi mumkin */
+/* grid-template-columns: repeat(4, minmax(100px, auto));-> responsiv qilish uchun repeat(n yoki (auto-fill)(auto-fit), minmax(n(1)px, auto))-> minmax(n(1)px, auto) funksiyasidan foydalaniladi va elementlarimiz pastga aftomatik tahlanib borish uchun (auto-fill) yoki (auto-fit) qiymatidan foydalaniladi asosan auto-fit ishlatiladi */
+#grid-container__items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 50px 100px 50px 100px;
+  padding: 20px;
+  background-color: #025955;
+  border-radius: 10px;
+}
+
+.grid-item {
+  padding: 20px;
+  background-color: aqua;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+}
+/* grid-column: ; nechta ustunni o'z ichiga olishini belgilaydi */
+/* grid-column: 1 / 4; 1-ustundan boshlab 4-ustungacha bo'lgan joyni o'z ichiga oladi */
+#grid-item-1 {
+  grid-column: 1 / 4;
+}
+/* grid-column: 1 / span 2;  nechta ustunni o'z ichiga olishini ko'rsatish uchun "span" kalit so'zidan foydalaniladi */
+#grid-item-2 {
+  grid-column: 1 / span 2;
+}
+/* grid-row: ; nechta qatorni o'z ichiga olishini belgilaydi */
+/* grid-row: 3 / 5; 3-qatordan boshlab 5-qatorgacha bo'lgan joyni o'z ichiga oladi */
+#grid-item-4 {
+  grid-row: 3 / 5;
+}
+/* grid-row: 3 / span 5; n(1)-qatordan boshlab n(n) ta qatorni o'z ichiga oishi uchun span kalit so'zidan foydalaniladi */
+#grid-item-5 {
+ grid-row: 3 / span 5;
+}
